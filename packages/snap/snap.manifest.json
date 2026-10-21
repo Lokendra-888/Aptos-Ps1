@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "description": "Manage Aptos-based tokens and NFTs, swap, stake and connect to Aptos apps with MetaMask..",
+  "proposedName": "Aptos Wallet",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vedant-asati/aptos-snap.git"
+  },
+  "source": {
+    "shasum": "A9EBsoN/yKslFUVS02kVvSewMiHsTc3AFrro4DN4A8s=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "aptos-connect",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_manageState": {},
+    "endowment:network-access": {},
+    "endowment:rpc": {
+      "dapps": true,
+      "snaps": false
+    },
+    "snap_dialog": {},
+    "snap_getBip32Entropy": [
+      {
+        "path": [
+          "m",
+          "44'",
+          "637'"
+        ],
+        "curve": "secp256k1"
+      }
+    ]
+  },
+  "manifestVersion": "0.1"
+}
