@@ -3015,14 +3015,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/eslint-config-jest@npm:^12.1.0":
-  version: 12.1.0
-  resolution: "@metamask/eslint-config-jest@npm:12.1.0"
+"@metamask/eslint-config-jest@npm:^15.0.1":
+  version: 15.0.1
+  resolution: "@metamask/eslint-config-jest@npm:15.0.1"
+  dependencies:
+    "@eslint/js": ^9.11.0
+    globals: ^15.9.0
   peerDependencies:
-    "@metamask/eslint-config": ^12.0.0
-    eslint: ^8.27.0
-    eslint-plugin-jest: ^27.1.5
-  checksum: 98f60234412051d429237dbf32b147a648a0e3b6adacafda24999ec9eb8096155c8000c62204415100c97980cc3bfe0a0fe19e4c318b8bb529eaf57e9f96e680
+    "@metamask/eslint-config": "workspace:^"
+    eslint: ^9.11.0
+    eslint-plugin-jest: ^28.8.3
+  checksum: 048abf263608bb25f7a19f5b7469e1dd908b774329ac1dc840b0d067eac8491ccbf7bea4d411571981f30924d87c66f2d62281210e55843b3f37142897305eab
   languageName: node
   linkType: hard
 
@@ -6344,7 +6347,7 @@ __metadata:
     "@jest/globals": ^29.5.0
     "@metamask/auto-changelog": ^3.4.4
     "@metamask/eslint-config": ^14.0.0
-    "@metamask/eslint-config-jest": ^12.1.0
+    "@metamask/eslint-config-jest": ^15.0.1
     "@metamask/eslint-config-nodejs": ^12.1.0
     "@metamask/eslint-config-typescript": ^12.1.0
     "@metamask/key-tree": ^9.1.2
@@ -17815,7 +17818,7 @@ __metadata:
     "@lavamoat/allow-scripts": ^3.0.0
     "@lavamoat/preinstall-always-fail": ^2.0.0
     "@metamask/eslint-config": ^14.0.0
-    "@metamask/eslint-config-jest": ^12.1.0
+    "@metamask/eslint-config-jest": ^15.0.1
     "@metamask/eslint-config-nodejs": ^12.1.0
     "@metamask/eslint-config-typescript": ^12.1.0
     "@typescript-eslint/eslint-plugin": ^5.42.1
@@ -18509,7 +18512,7 @@ __metadata:
   dependencies:
     "@metamask/eslint-config": ^14.0.0
     "@metamask/eslint-config-browser": ^12.1.0
-    "@metamask/eslint-config-jest": ^12.1.0
+    "@metamask/eslint-config-jest": ^15.0.1
     "@metamask/eslint-config-nodejs": ^12.1.0
     "@metamask/eslint-config-typescript": ^12.1.0
     "@metamask/providers": ^17.2.1
