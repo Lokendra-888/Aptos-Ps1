@@ -39,11 +39,7 @@ export async function getRawPrivateKey(
   return keypair.privateKeyBytes;
 }
 
-export async function getPrivateKey(path: string[]): Promise<string> {
-  const privateKeyBytes = (await getRawPrivateKey(path)) as Uint8Array;
-  const privateKey = new Secp256k1PrivateKey(privateKeyBytes);
-  return privateKey.toString();
-}
+
 
 export async function getAccount(path: string[]): Promise<Account> {
   const privateKeyBytes = (await getRawPrivateKey(path)) as Uint8Array;

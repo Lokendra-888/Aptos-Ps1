@@ -240,15 +240,6 @@ const Index = () => {
       },
     });
   };
-  const handleGetPrivateKey = async () => {
-    const res = await invokeSnap({
-      method: 'getPrivateKey',
-      params: {
-        derivationPath: activeAccount?.derivationPath,
-        confirm: true, // @DEV not needed
-      },
-    });
-  };
   const handleCreateNewAccount = async () => {
     const index = accounts.length;
     if (!index) console.error('index isn\'t defined');
@@ -545,7 +536,7 @@ const Index = () => {
               <>
                 <button onClick={handleGetAccountAddress} disabled={!installedSnap} >Get AccountAddress</button> <br /> <hr style={{ border: '0px', margin: '4px' }} />
                 <button onClick={handleGetPublicKey} disabled={!installedSnap} >Get PublicKey</button> &nbsp;
-                <button onClick={handleGetPrivateKey} disabled={!installedSnap} >Get PrivateKey</button>
+                
               </>,
           }}
           disabled={!installedSnap}

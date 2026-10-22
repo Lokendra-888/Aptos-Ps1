@@ -22,7 +22,7 @@ yarn start
 1. Open http://localhost:8000 in the browser with MetaMask Flask.
 2. Click **Connect** and approve the snap in MetaMask.
 3. Pick an account from the dropdown and use the buttons:
-   - **Get AccountAddress / PublicKey / PrivateKey**: show the active account's details.
+   - **Get AccountAddress / PublicKey**: show the active account's details.
    - **Send Message**: sign a text message.
    - **Send Txn**: enter a receiver address and amount (in octas, 1 APT = 100,000,000), then approve in MetaMask. The account is auto-funded from the testnet faucet first.
    - **Create New Acc**: derive another account.

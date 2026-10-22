@@ -12,7 +12,7 @@ import {
   Copyable,
 } from '@metamask/snaps-sdk/jsx';
 
-import { getAccount, getAccountAddress, getPrivateKey, getPublicKey } from './cryptoUtils';
+import { getAccount, getAccountAddress, getPublicKey } from './cryptoUtils';
 import { bytesToHex, hexToBytes, stringifyBigInts, convertBytesToHexRecursively, fetchData } from './utils';
 import { MY_ACC_ADD, APTOS_COIN, COIN_STORE, INITIAL_BALANCE } from './constants';
 import { Operation, RequestParams, StateData, } from './types';
@@ -71,52 +71,31 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
 
       return pubKey;
     }
-    case 'getPrivateKey': {
-      const { derivationPath } = request.params ?? {};
-
-      const sk: string = await getPrivateKey(derivationPath);
-      await snap.request({
-        method: 'snap_dialog',
-        params: {
-          type: 'alert',
-          content: (
-            <Box>
-              <Text>Private Key</Text>
-              <Copyable value={sk} sensitive />
-            </Box>
-          ),
-        },
-      });
-
-      return sk;
-    }
+    
     case 'createNewAccount': {
-      const { derivationPath } = request.params ?? {};
+  const { derivationPath } = request.params ?? {};
 
-      const pubKey: string = await getPublicKey(derivationPath);
-      const accAdd: string = await getAccountAddress(derivationPath);
-      const sk: string = await getPrivateKey(derivationPath);
+  const publicKey = await getPublicKey(derivationPath);
+  const address = await getAccountAddress(derivationPath);
 
-      await snap.request({
-        method: 'snap_dialog',
-        params: {
-          type: 'alert',
-          content: (
-            <Box>
-              <Heading>Your Account details:</Heading>
-              <Text>Account Address</Text>
-              <Copyable value={accAdd} />
-              <Text>Public Key</Text>
-              <Copyable value={pubKey} />
-              <Text>Private Key</Text>
-              <Copyable value={sk} sensitive />
-            </Box>
-          ),
-        },
-      });
+  await snap.request({
+    method: 'snap_dialog',
+    params: {
+      type: 'alert',
+      content: (
+        <Box>
+          <Heading>Account Details</Heading>
+          <Text>Account Address</Text>
+          <Copyable value={address} />
+          <Text>Public Key</Text>
+          <Copyable value={publicKey} />
+        </Box>
+      ),
+    },
+  });
 
-      return accAdd;
-    }
+  return address;
+}
     case 'signMessage': {
       const { derivationPath, message } = request.params ?? {};
 
@@ -185,21 +164,11 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
       if (!txnDetails.receiver || !txnDetails.amount) throw new Error('Txn Details not present.')
 
       const account = await getAccount(derivationPath);
-      console.log('account: ', account);
+    
 
       // Setup the client
       const config = new AptosConfig({ network: Network.TESTNET });
       const aptos = new Aptos(config);
-      try {
-        await aptos.fundAccount({
-          accountAddress: account.accountAddress,
-          amount: INITIAL_BALANCE,
-        });
-        console.log('account have been funded!');
-      } catch (error) {
-        console.log('account could not be funded!');
-        console.log(error);
-      }
 
       try {
         console.log('\n=== Balances ===\n');
@@ -283,21 +252,12 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
       const { derivationPath } = request.params ?? {};
 
       const account = await getAccount(derivationPath);
-      console.log('account: ', account);
+       
 
       // Setup the client
       const config = new AptosConfig({ network: Network.TESTNET });
       const aptos = new Aptos(config);
-      try {
-        await aptos.fundAccount({
-          accountAddress: account.accountAddress,
-          amount: INITIAL_BALANCE,
-        });
-        console.log('account have been funded!');
-      } catch (error) {
-        console.log('account could not be funded!');
-        console.log(error);
-      }
+     
 
       try {
         console.log('\n=== Balances ===\n');
