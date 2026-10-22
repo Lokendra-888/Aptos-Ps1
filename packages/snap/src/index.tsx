@@ -100,7 +100,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
       const { derivationPath, message } = request.params ?? {};
 
       const account = await getAccount(derivationPath);
-      const sig = account.sign(message || 'Jai Siyaram!');
+      const sig = account.sign(message || 'Aptos Snap');
 
       await snap.request({
         method: 'snap_dialog',
@@ -109,7 +109,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
           content: (
             <Box>
               <Text>Message</Text>
-              <Copyable value={message || 'Jai Siyaram!'} />
+              <Copyable value={message || 'Aptos snap'} />
               <Text>Signature</Text>
               <Copyable value={sig.toString()} />
             </Box>
@@ -363,7 +363,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
           type: 'alert',
           content: (
             <Box>
-              <Heading>Jai Siyaram!</Heading>
+              <Heading>Aptos Snap!</Heading>
               <Text>Aptos RPC Fetch</Text>
               <Copyable value={JSON.stringify(data, null, 2)}></Copyable>
               <Divider />

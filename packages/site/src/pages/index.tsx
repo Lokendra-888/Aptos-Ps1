@@ -318,7 +318,7 @@ const Index = () => {
       method: 'signAllTransactions',
       params: {
         derivationPath: activeAccount?.derivationPath,
-        messages: ['Jai Siyaram!', '0xab7896'],
+        messages: ['Aptos snap', '0xab7896'],
       },
     });
     console.log(res);
@@ -328,7 +328,7 @@ const Index = () => {
       method: 'signMessage',
       params: {
         derivationPath: activeAccount?.derivationPath,
-        message: messageText || 'Jai Siyaram!',
+        message: messageText || 'Aptos Snap',
       },
     });
     console.log(res);
@@ -348,7 +348,7 @@ const Index = () => {
       method: 'getData',
       // params: {
       //   derivationPath: activeAccount?.derivationPath,
-      //   message: messageText || 'Jai Siyaram!',
+      //   message: messageText || 'APtos snap',
       // },
     });
     console.log(res);
@@ -358,7 +358,7 @@ const Index = () => {
       method: 'clearData',
       // params: {
       //   derivationPath: activeAccount?.derivationPath,
-      //   message: messageText || 'Jai Siyaram!',
+      //   message: messageText || 'Aptos Snap',
       // },
     });
     console.log(res);

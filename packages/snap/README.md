@@ -60,7 +60,6 @@ console.log('Transaction Hash:', txnHash);
 
 - **getAccountAddress**: Retrieve the Aptos account address for a given derivation path.
 - **getPublicKey**: Get the public key for the specified derivation path.
-- **getPrivateKey**: Obtain the private key (for advanced use cases).
 - **createNewAccount**: Generate a new Aptos account.
 - **signMessage**: Sign a message using the account's private key.
 - **sign&sendTxn**: Sign and send a transaction on the Aptos blockchain.
