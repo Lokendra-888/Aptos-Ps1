@@ -54,6 +54,11 @@
   "engines": {
     "node": ">=18.6.0"
   },
+  "dependenciesMeta": {
+    "sharp": {
+      "built": true
+    }
+  },
   "lavamoat": {
     "allowScripts": {
       "@lavamoat/preinstall-always-fail": false,

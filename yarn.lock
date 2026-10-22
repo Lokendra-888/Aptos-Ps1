@@ -17832,6 +17832,9 @@ __metadata:
     prettier-plugin-packagejson: ^2.2.18
     sharp: ^0.35.5
     typescript: ^4.7.4
+  dependenciesMeta:
+    sharp:
+      built: true
   languageName: unknown
   linkType: soft
 
